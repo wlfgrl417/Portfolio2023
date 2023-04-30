@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Temperatura</title>
+</head>
+<style>
+    .titulo {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="titulo">
+        <h1> Conversão de Temperatura</h1> <br>
+    <img text-align="center" class="imagem"
+                    src="https://akamai.sscdn.co/uploadfile/letras/albuns/c/9/f/9/410951420472122.jpg"
+                    alt="Majin Boo"> <br>
+                    <br>
+                    <input type="number" id="temperatura" placeholder="Digite a temperatura"><br>
+                <div class="radios">                    
+                    <input id="cf" type="radio" name="tipo">Celsius para Fahrenheit</input><br>
+                    <input id="ck" type="radio" name="tipo">Celsius para Kelvin</input><br>
+                    <input id="fc" type="radio" name="tipo">Fahrenheit para Celsius</input><br>
+                    <input id="fk" type="radio" name="tipo">Fahrenheit para Kelvin</input><br>
+                    <input id="kc" type="radio" name="tipo">Kelvin para Celsius</input><br>
+                    <input id="kf" type="radio" name="tipo">Kelvin para Fahrenheit</input><br>
+
+
+                </div>
+                <br>
+                <button onclick="converte()" type="button" class="btn btn-outline-warning" style="width: 200px;">Converter</button><br>
+                <p id="resultado">Resultado</p>
+           
+        </div>
+    </body>
+    <script>
+        function media() {
+            var q = prompt("Digite a quantidade de números para a média!")
+            var resultado, soma = 0
+            for (var i = 1; i <= q; i++) {
+                soma += Number(prompt("Digite o " + i + "º número!"))
+            }
+            resultado = soma / q
+            alert("A média é: " + resultado)
+        }
+        function dia17() {
+            var nome = prompt("Digite seu nome!")
+            var anoAtual = prompt("Digite o ano atual!")
+            var anoNasc = prompt("Digite o seu ano de nascimento!")
+            var idade = anoAtual - anoNasc
+            if (idade >= 18) {
+                alert("Bem vindo, " + nome + "\nVocê tem " + idade + " anos!\nPortanto é maior de idade!")
+            }
+            else {
+                alert("Bem vindo, " + nome + "\nVocê tem " + idade + " anos!\nPortanto é menor de idade!")
+            }
+        }
+        function converte() {
+            var temperatura =  Number(document.getElementById("temperatura").value)
+            var resultado = 0
+            if (document.getElementById("cf").checked) {
+                resultado = temperatura * (9/5) + 32
+            }
+            else if (document.getElementById("ck").checked) {
+                resultado = temperatura + 273.15
+            }
+            else if (document.getElementById("fc").checked) {
+                resultado = (temperatura - 32)*5/9
+            }
+            else if (document.getElementById("fk").checked) {
+                resultado = (temperatura - 32)*5/9 + 273.15
+            }
+            else if (document.getElementById("kc").checked) {
+                resultado = temperatura - 273.15
+            }
+            else if (document.getElementById("kf").checked) {
+                resultado = (temperatura - 273.15)*9/5 + 32
+            }
+            document.getElementById("resultado").innerHTML = resultado
+        }
+    </script>
+</body>
+</html>
