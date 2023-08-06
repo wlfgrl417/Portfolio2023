@@ -4,6 +4,7 @@ function carregar() {
     var img = window.document.getElementById("imagem")
     var now = new Date()
     var currentHour = now.getHours()
+    currentHour = 19
     msg.innerHTML= `Agora sao ${currentHour} horas.`
     var oldLink = document.getElementById('dynamic-favicon');
     document.head.removeChild(oldLink);
@@ -25,7 +26,7 @@ function carregar() {
         msg.innerHTML += '<p><strong>Boa noite!</strong></p>'
         img.src = 'boanoite.png'
         document.body.style.background = "#071532"
-        link.href="noite.ico"
+        link.href="noit.ico"
     }
     document.head.appendChild(link);
 }
