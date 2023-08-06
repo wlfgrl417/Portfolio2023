@@ -4,7 +4,6 @@ function carregar() {
     var img = window.document.getElementById("imagem")
     var now = new Date()
     var currentHour = now.getHours()
-    currentHour = 19
     msg.innerHTML= `Agora sao ${currentHour} horas.`
     var oldLink = document.getElementById('dynamic-favicon');
     document.head.removeChild(oldLink);
